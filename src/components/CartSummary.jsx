@@ -7,4 +7,6 @@ const CartSummary = () => {
     return (
         <div>{basket.length} item(s) in your basket: £{calculateTotal()}</div>
     )
-}
+};
+
+export default CartSummary;
