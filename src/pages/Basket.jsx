@@ -24,10 +24,10 @@ function Basket() {
                                 />
                             </label>
                         </div>
-                    ))};
+                    ))}
                     <h2 className="basket-total">Total: £{calculateTotal()}</h2>
                 </div>
-            )};
+            )}
         </div>
     );
 }

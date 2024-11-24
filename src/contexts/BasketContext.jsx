@@ -6,14 +6,16 @@ export function BasketProvider({ children }) {
     const [basket, setBasket] = useState([]);
 
     const addToBasket = (product) => {
+        console.log(basket)
         setBasket((prevBasket) => {
             const item = prevBasket.find((item) => item.id === product.id);
+            console.log(item);
             if (item) {
                 return prevBasket.map((item) =>
                 item.id === product.id ? { ...item, quantity: item.quantity + 1} : item
             );
             } else {
-                return [...prevBasket, {product, quantity: 1}];
+                return [...prevBasket, {...product, quantity: 1}];
             }
         });
     };
