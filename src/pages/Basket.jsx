@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { BasketContext } from "../contexts/BasketContext";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function Basket() {
-    const { basket, updateQuantity, calculateTotal } = useContext(BasketContext);
+    const { basket, updateQuantity, calculateTotal, deleteItem } = useContext(BasketContext);
 
     return (
         <div>
@@ -23,6 +25,9 @@ function Basket() {
                                     onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
                                 />
                             </label>
+                            <IconButton aria-label="delete" onClick={() => deleteItem(item.id)}>
+                                <DeleteIcon />
+                            </IconButton>
                         </div>
                     ))}
                     <h2 className="basket-total">Total: £{calculateTotal()}</h2>

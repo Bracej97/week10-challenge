@@ -28,12 +28,18 @@ export function BasketProvider({ children }) {
         );
     };
 
+    const deleteItem = (id) => {
+        setBasket((prevBasket) =>
+            prevBasket.filter((item) => item.id !== id)
+        );
+    };
+
     const calculateTotal = () => {
         return basket.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
     };
 
     return (
-        <BasketContext.Provider value={{ basket, addToBasket, updateQuantity, calculateTotal }}>
+        <BasketContext.Provider value={{ basket, addToBasket, updateQuantity, calculateTotal, deleteItem }}>
             { children }
         </BasketContext.Provider>
     );
