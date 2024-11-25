@@ -6,6 +6,8 @@ import { products } from '../data';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Button, CardActions, CardMedia, Typography } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
 function Home() {
@@ -25,20 +27,20 @@ function Home() {
                 gap: '10px',
              }}>
                 {products.map((product) => (
-                    <Card sx={{ maxWidth: 345 }} key={product.id}>
+                    <Card sx={{ maxWidth: 345, minWidth: 300, backgroundColor: '#444444'}} key={product.id}>
                         <CardContent>
-                            <CardMedia sx={{ height: 230 }} image={`../../public/${product.id}.jpg`}
+                            <CardMedia sx={{ height: 230 }} image={`/${product.id}.jpg`}
                             />
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" component="div" sx={{ color: '#ffffff' }}>
                                 {product.name}
                             </Typography>
-                            <Typography variant="body2" sx={{ color: 'text-secondary' }}>
+                            <Typography variant="body2" sx={{ color: '#ffffff' }}>
                                 Price: £{product.price}
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            <Button size="small"><Link to={`/product/${product.id}`}>View product</Link></Button>
-                            <Button size="small" onClick={() => addToBasket(product)}>Add to basket</Button>
+                        <CardActions style={{justifyContent: 'center'}}>
+                            <Button size="small" variant="contained"><Link to={`/product/${product.id}`} style={{ color: '#FFF' }}>View product</Link></Button>
+                            <IconButton sx={{ color:"#4dabf5" }} aria-label="add to shopping cart" onClick={() => addToBasket(product)}><AddShoppingCartIcon /></IconButton>
                         </CardActions>
                     </Card>
                 ))}
