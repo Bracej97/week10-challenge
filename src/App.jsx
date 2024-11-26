@@ -5,13 +5,18 @@ import Home from './pages/Home';
 import Basket from './pages/Basket';
 import Product from './pages/Product';
 import CartSummary from './components/CartSummary';
+import Header from './components/Header';
 import './App.css'
+
+
+
 
 function App() {
 
   return (
     <BasketProvider>
       <Router>
+        <Header />
         <nav>
           <div>
             <Link to="/">Home</Link> | <Link to="/basket">Basket</Link>
