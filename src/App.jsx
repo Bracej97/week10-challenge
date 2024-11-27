@@ -4,7 +4,6 @@ import { BasketProvider } from './contexts/BasketContext';
 import Home from './pages/Home';
 import Basket from './pages/Basket';
 import Product from './pages/Product';
-import CartSummary from './components/CartSummary';
 import Header from './components/Header';
 import './App.css'
 
@@ -17,14 +16,6 @@ function App() {
     <BasketProvider>
       <Router>
         <Header />
-        <nav>
-          <div>
-            <Link to="/">Home</Link> | <Link to="/basket">Basket</Link>
-          </div>
-          <div>
-            <CartSummary />
-          </div>
-        </nav>
         <div className='container'>
           <Routes>
             <Route path='/' element={<Home />} />
