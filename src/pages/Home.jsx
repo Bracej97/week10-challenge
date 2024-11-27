@@ -15,7 +15,7 @@ function Home() {
 
     return (
         <div>
-            <h1>Products</h1>
+            <div style={{ height: '60px' }} />
             <div style={{
                 width: '100%',
                 display: 'flex',
