@@ -29,13 +29,13 @@ function Home() {
                 {products.map((product) => (
                     <Card sx={{ maxWidth: 345, minWidth: 300, backgroundColor: '#444444'}} key={product.id}>
                         <CardContent>
-                            <CardMedia sx={{ height: 230 }} image={`/${product.id}.jpg`}
+                            <CardMedia sx={{ height: 230, marginBottom: '5px' }} image={`/${product.id}.jpg`}
                             />
                             <Typography gutterBottom variant="h5" component="div" sx={{ color: '#ffffff' }}>
                                 {product.name}
                             </Typography>
-                            <Typography variant="body2" sx={{ color: '#ffffff' }}>
-                                Price: £{product.price}
+                            <Typography variant="body1" sx={{ color: '#ffffff' }}>
+                                £{product.price}
                             </Typography>
                         </CardContent>
                         <CardActions style={{justifyContent: 'center'}}>
