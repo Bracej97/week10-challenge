@@ -1,8 +1,8 @@
 export const products = [
-    { id: 1, name: 'Lime', price: 10.0 },
-    { id: 2, name: 'Computer mouse', price: 15.0 },
-    { id: 3, name: 'Boots', price: 20.0 },
-    { id: 4, name: 'Bicycle', price: 25.0 },
-    { id: 5, name: 'Mobile phone', price: 30.0 },
-    { id: 6, name: 'Pocket watch', price: 35.0 },
+    { id: 1, name: 'Lime', price: 10.0, description: 'Brighten your meals and drinks with the fresh tang of premium Lime. Each lime is bursting with natural, zesty flavor, perfect for cocktails, marinades, dressings, and more. Hand-picked for ultimate freshness, these limes are packed with Vitamin C and have a vibrant green color that adds an aesthetic touch to any dish.' },
+    { id: 2, name: 'Computer mouse', price: 15.0, description: "Experience precision and comfort with the ErgoPro Wireless Mouse. Designed for seamless productivity, this ergonomic mouse offers adjustable DPI settings and silent clicks. Compatible with Windows, macOS, and Linux, it’s your ultimate productivity tool." },
+    { id: 3, name: 'Boots', price: 20.0, description: "Step out in style and confidence with the TrailMaster Waterproof Hiking Boots. Built for durability and comfort, these boots feature rugged soles, a breathable lining, and a waterproof exterior. Whether trekking rugged trails or navigating urban jungles, they’re your go-to for all adventures." },
+    { id: 4, name: 'Bicycle', price: 25.0, description: "Conquer the streets and trails with the Momentum Hybrid Bike 500. Designed for versatility, this lightweight aluminum-frame bicycle features 21-speed gear shifting for smooth rides, whether uphill or on flat terrain. Fitted with ergonomic handlebars and a comfortable saddle, it’s ideal for fitness or leisurely commutes." },
+    { id: 5, name: 'Mobile phone', price: 30.0, description: "Redefine connectivity with the sleek and powerful EdgeMax Pro 5G Smartphone. Boasting a crystal-clear 6.7” AMOLED display, a triple-lens 108MP camera, and 256GB storage, this phone is engineered for modern lifestyles. Powered by a blazing-fast processor and 5G capability, it keeps you connected anytime, anywhere." },
+    { id: 6, name: 'Pocket watch', price: 35.0, description: "Timeless elegance meets modern craftsmanship in the Heritage Quartz Pocket Watch. Encased in polished stainless steel with intricate engraving, this vintage-inspired watch features a precision quartz movement and a matching chain. Ideal for collectors and those who appreciate classic style." },
 ]
