@@ -1,3 +1,5 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -5,13 +7,15 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import HomeIcon from '@mui/icons-material/Home';
+import { BasketContext } from '../contexts/BasketContext'
+import { useContext } from 'react';
 
 
 const Header = () => {
+  const { basket, calculateTotal } = useContext(BasketContext);
 
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -21,7 +25,7 @@ const Header = () => {
         '&:hover': {
           backgroundColor: alpha(theme.palette.common.white, 0.25),
         },
-        marginLeft: 0,
+        marginLeft: 30,
         width: '100%',
         [theme.breakpoints.up('sm')]: {
           marginLeft: theme.spacing(1),
@@ -58,17 +62,19 @@ const Header = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar>
-                    <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    sx={{ mr: 2 }}
-                    >
-                    <HomeIcon />
-                    </IconButton>
+                    <Link to="/">
+                      <IconButton
+                      size="large"
+                      edge="start"
+                      color="inherit"
+                      aria-label="open drawer"
+                      sx={{ mr: 2, color: '#ffffff' }}
+                      >
+                        <HomeIcon />
+                      </IconButton>
+                    </Link>
                     <Typography
                     variant="h6"
                     noWrap
@@ -86,15 +92,18 @@ const Header = () => {
                         inputProps={{ 'aria-label': 'search' }}
                     />
                     </Search>
-                    <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    sx={{ mr: 2 }}
-                    >
-                    <ShoppingBasketIcon />
-                    </IconButton>
+                    <Link to="/basket">
+                      <IconButton
+                      size="large"
+                      edge="start"
+                      color="inherit"
+                      aria-label="open drawer"
+                      sx={{ mr: 2, color: "#ffffff" }}
+                      >
+                        <ShoppingBasketIcon sx={{ marginRight: '5px' }} />
+                        £{calculateTotal()}
+                      </IconButton>
+                    </Link>
                 </Toolbar>
             </AppBar>
         </Box>
