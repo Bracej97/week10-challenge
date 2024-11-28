@@ -6,25 +6,33 @@ import Basket from './pages/Basket';
 import Product from './pages/Product';
 import Header from './components/Header';
 import './App.css'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 
 
 
 function App() {
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
 
   return (
-    <BasketProvider>
-      <Router>
-        <Header />
-        <div className='container'>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/product/:id' element={<Product />} />
-            <Route path='/basket' element={<Basket />} />
-          </Routes>
-        </div>
-      </Router>
-    </BasketProvider>
+    <ThemeProvider theme={darkTheme}>
+      <BasketProvider>
+        <Router>
+          <Header />
+          <div className='container'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/product/:id' element={<Product />} />
+              <Route path='/basket' element={<Basket />} />
+            </Routes>
+          </div>
+        </Router>
+      </BasketProvider>
+    </ThemeProvider>
   )
 }
 
