@@ -4,7 +4,7 @@ import { BasketContext } from "../contexts/BasketContext";
 import { products } from "../data";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { CardActions, CardMedia, Typography } from "@mui/material";
+import { Button, CardActions, CardMedia, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
@@ -31,12 +31,12 @@ function Product() {
 
                         </CardContent>
                         <CardActions style={{justifyContent: 'center'}}>
-                            <IconButton sx={{ color:"#4dabf5" }} aria-label="add to shopping cart" onClick={() => addToBasket(product)}>
-                                <Typography variant="h5" sx={{ color: '#ffffff', whiteSpace: 'pre-line', marginRight: '10px' }}>
+                            <Button size="small" variant="contained" aria-label="add to shopping cart" onClick={() => addToBasket(product)}>
+                                <Typography variant="h5" sx={{ color: '#222222', whiteSpace: 'pre-line', marginRight: '10px' }}>
                                     £{product.price}
                                 </Typography>
                                 <AddShoppingCartIcon />
-                            </IconButton>
+                            </Button>
                         </CardActions>
                     </Card>
         </div>
