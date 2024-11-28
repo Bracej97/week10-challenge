@@ -12,10 +12,12 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import HomeIcon from '@mui/icons-material/Home';
 import { BasketContext } from '../contexts/BasketContext'
 import { useContext } from 'react';
+import { SearchContext } from "../contexts/SearchContext";
 
 
 const Header = () => {
   const { basket, calculateTotal } = useContext(BasketContext);
+  const { query, search, setQuery } = useContext(SearchContext);
 
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -52,10 +54,7 @@ const Header = () => {
           paddingLeft: `calc(1em + ${theme.spacing(4)})`,
           transition: theme.transitions.create('width'),
           [theme.breakpoints.up('sm')]: {
-            width: '12ch',
-            '&:focus': {
-              width: '20ch',
-            },
+            width: '20ch',
           },
         },
       }));
@@ -90,6 +89,9 @@ const Header = () => {
                     <StyledInputBase
                         placeholder="Search…"
                         inputProps={{ 'aria-label': 'search' }}
+                        onChange={(e) => setQuery(e.target.value)}
+                        value={query}
+                        autoFocus={query.length > 0}
                     />
                     </Search>
                     <Link to="/basket">

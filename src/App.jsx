@@ -7,6 +7,7 @@ import Product from './pages/Product';
 import Header from './components/Header';
 import './App.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { SearchProvider } from './contexts/SearchContext';
 
 
 
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
+      <SearchProvider>
       <BasketProvider>
         <Router>
           <Header />
@@ -32,6 +34,7 @@ function App() {
           </div>
         </Router>
       </BasketProvider>
+      </SearchProvider>
     </ThemeProvider>
   )
 }

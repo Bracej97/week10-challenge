@@ -8,10 +8,12 @@ import CardContent from '@mui/material/CardContent';
 import { Button, CardActions, CardMedia, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { SearchContext } from "../contexts/SearchContext";
 
 
 function Home() {
     const { addToBasket } = useContext(BasketContext);
+    const { search, query } = useContext(SearchContext);
 
     return (
         <div>
@@ -26,7 +28,7 @@ function Home() {
                 alignSelf: 'stretch',
                 gap: '10px',
              }}>
-                {products.map((product) => (
+                {search(products).map((product) => (
                     <Card sx={{ maxWidth: 345, minWidth: 300, backgroundColor: '#444444'}} key={product.id}>
                         <CardContent>
                             <CardMedia sx={{ height: 230, marginBottom: '5px' }} image={`/${product.id}.jpg`}
