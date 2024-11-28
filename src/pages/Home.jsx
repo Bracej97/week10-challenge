@@ -39,7 +39,7 @@ function Home() {
                             </Typography>
                         </CardContent>
                         <CardActions style={{justifyContent: 'center'}}>
-                            <Button size="small" variant="contained"><Link to={`/product/${product.id}`} style={{ color: '#FFF' }}>View product</Link></Button>
+                            <Button size="small" variant="contained"><Link to={`/product/${product.id}`} style={{ color: '#222222' }}>View product</Link></Button>
                             <IconButton sx={{ color:"#4dabf5" }} aria-label="add to shopping cart" onClick={() => addToBasket(product)}><AddShoppingCartIcon /></IconButton>
                         </CardActions>
                     </Card>
