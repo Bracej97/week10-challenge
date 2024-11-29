@@ -13,6 +13,7 @@ import { SearchProvider } from './contexts/SearchContext';
 
 
 function App() {
+  // Set the theme of the entire app to dark mode
   const darkTheme = createTheme({
     palette: {
       mode: 'dark',

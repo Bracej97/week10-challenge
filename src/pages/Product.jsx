@@ -9,12 +9,15 @@ import IconButton from "@mui/material/IconButton";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 function Product() {
+    // Unpack the basket context
     const { addToBasket } = useContext(BasketContext);
+    // pull the specific product from the product array with the passed id
     const { id } = useParams();
     const product = products.find((p) => p.id === parseInt(id))
 
     if (!product) return <p>Product not found.</p>
 
+    // Return a card for the specific product with an image, details of the product, the price and an add to basket button
     return (
         <div className="product-card" >
             <div style={{ height: '60px' }} />

@@ -12,9 +12,14 @@ import { SearchContext } from "../contexts/SearchContext";
 
 
 function Home() {
+    // Unpack the basket and search contexts
     const { addToBasket } = useContext(BasketContext);
     const { search, query } = useContext(SearchContext);
 
+    // Returning the main content of the home page
+    // A ternary operator is for if the search function returns no items
+    // Map function to map through the products and create a bard component from MUI for each item
+    // For each item there is the ability to view the detail products or add an item to the basket
     return (
         <div>
             <div style={{ height: '60px' }} />

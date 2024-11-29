@@ -6,9 +6,15 @@ import { Paper } from "@mui/material";
 import { SearchContext } from "../contexts/SearchContext";
 
 function Basket() {
+    // Unpack the contexts for basket and search
     const { basket, updateQuantity, calculateTotal, deleteItem } = useContext(BasketContext);
     const { search, query } = useContext(SearchContext);
 
+    // Returning the main content of the basket page
+    // First there is a ternary operator to display a message if the basket is empty or the items of the basket if there is anything
+    // A second ternary operator is for if the search function returns no items
+    // Map function to map through the basket and create a paper component from MUI for each item in the basket
+    // For each item there is the ability to change the quantity of the items present or delete an item entirely from the basket
     return (
         <div>
             <h1>Your basket</h1>
