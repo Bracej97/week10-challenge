@@ -3,9 +3,11 @@ import { BasketContext } from "../contexts/BasketContext";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Paper } from "@mui/material";
+import { SearchContext } from "../contexts/SearchContext";
 
 function Basket() {
     const { basket, updateQuantity, calculateTotal, deleteItem } = useContext(BasketContext);
+    const { search } = useContext(SearchContext);
 
     return (
         <div>
@@ -14,7 +16,7 @@ function Basket() {
                 <p>Your basket is empty.</p>
             ) : (
                 <div>
-                    {basket.map((item) => (
+                    {search(basket).map((item) => (
                         <div key={item.id} className="basket-item">
                             <Paper elevation={12}>
                             <h3>{item.name}</h3>

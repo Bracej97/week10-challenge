@@ -13,7 +13,7 @@ import { SearchContext } from "../contexts/SearchContext";
 
 function Home() {
     const { addToBasket } = useContext(BasketContext);
-    const { search, query } = useContext(SearchContext);
+    const { search } = useContext(SearchContext);
 
     return (
         <div>
