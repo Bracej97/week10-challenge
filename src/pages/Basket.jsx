@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import { BasketContext } from "../contexts/BasketContext";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Paper } from "@mui/material";
+import { Button, Paper } from "@mui/material";
 import { SearchContext } from "../contexts/SearchContext";
 
 function Basket() {
     // Unpack the contexts for basket and search
-    const { basket, updateQuantity, calculateTotal, deleteItem } = useContext(BasketContext);
+    const { basket, updateQuantity, calculateTotal, deleteItem, setBasket } = useContext(BasketContext);
     const { search, query } = useContext(SearchContext);
 
     // Returning the main content of the basket page
@@ -45,6 +45,7 @@ function Basket() {
                         </div>
                     )
                     ))}
+                    <Button size="small" variant="contained" color="error" onClick={() => setBasket([])} sx={{marginTop: '10px'}} style={{ color: '#ffffff' }}>Empty your basket</Button>
                     <h2 className="basket-total">Total: £{calculateTotal()}</h2>
                 </div>
             )}

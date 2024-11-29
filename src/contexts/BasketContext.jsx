@@ -43,7 +43,7 @@ export function BasketProvider({ children }) {
     };
 
     return (
-        <BasketContext.Provider value={{ basket, addToBasket, updateQuantity, calculateTotal, deleteItem }}>
+        <BasketContext.Provider value={{ basket, addToBasket, updateQuantity, calculateTotal, deleteItem, setBasket }}>
             { children }
         </BasketContext.Provider>
     );
