@@ -70,6 +70,7 @@ const Header = () => {
                       color="inherit"
                       aria-label="open drawer"
                       sx={{ mr: 2, color: '#ffffff' }}
+                      onClick={() => setQuery("")}
                       >
                         <HomeIcon />
                       </IconButton>
@@ -101,6 +102,7 @@ const Header = () => {
                       color="inherit"
                       aria-label="open drawer"
                       sx={{ mr: 2, color: "#ffffff" }}
+                      onClick={() => setQuery("")}
                       >
                         <ShoppingBasketIcon sx={{ marginRight: '5px' }} />
                         £{calculateTotal()}
