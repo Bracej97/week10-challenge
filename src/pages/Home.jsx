@@ -13,11 +13,14 @@ import { SearchContext } from "../contexts/SearchContext";
 
 function Home() {
     const { addToBasket } = useContext(BasketContext);
-    const { search } = useContext(SearchContext);
+    const { search, query } = useContext(SearchContext);
 
     return (
         <div>
             <div style={{ height: '60px' }} />
+            {query.length > 0 && search(products).length === 0 ?(
+                        <p>No products match your search.</p>
+                    ) : (
             <div style={{
                 width: '100%',
                 display: 'flex',
@@ -46,7 +49,7 @@ function Home() {
                         </CardActions>
                     </Card>
                 ))}
-            </div>
+            </div>)}
         </div>
     )
 };

@@ -7,7 +7,7 @@ import { SearchContext } from "../contexts/SearchContext";
 
 function Basket() {
     const { basket, updateQuantity, calculateTotal, deleteItem } = useContext(BasketContext);
-    const { search } = useContext(SearchContext);
+    const { search, query } = useContext(SearchContext);
 
     return (
         <div>
@@ -16,7 +16,10 @@ function Basket() {
                 <p>Your basket is empty.</p>
             ) : (
                 <div>
-                    {search(basket).map((item) => (
+                    {query.length > 0 && search(basket).length === 0 ?(
+                        <p>No products match your search.</p>
+                    ) : (
+                    search(basket).map((item) => (
                         <div key={item.id} className="basket-item">
                             <Paper elevation={12}>
                             <h3>{item.name}</h3>
@@ -34,6 +37,7 @@ function Basket() {
                             </IconButton>
                             </Paper>
                         </div>
+                    )
                     ))}
                     <h2 className="basket-total">Total: £{calculateTotal()}</h2>
                 </div>
