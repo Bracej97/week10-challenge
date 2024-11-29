@@ -19,7 +19,7 @@ function Home() {
         <div>
             <div style={{ height: '60px' }} />
             {query.length > 0 && search(products).length === 0 ?(
-                        <p>No products match your search.</p>
+                        <h1>No products match your search.</h1>
                     ) : (
             <div style={{
                 width: '100%',

@@ -17,7 +17,7 @@ function Basket() {
             ) : (
                 <div>
                     {query.length > 0 && search(basket).length === 0 ?(
-                        <p>No products match your search.</p>
+                        <h3>No products match your search.</h3>
                     ) : (
                     search(basket).map((item) => (
                         <div key={item.id} className="basket-item">
